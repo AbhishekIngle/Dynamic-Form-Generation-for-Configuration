@@ -6,7 +6,7 @@ The goal is to show how to build a **configurator** where the form adapts to use
 
 ---
 
-## ✨ Features
+## Features
 
 - **Dynamic Forms** powered by [`@rjsf/core`](https://github.com/rjsf-team/react-jsonschema-form)
 - **Schema-driven UI**: forms adapt automatically when selecting product models
@@ -17,7 +17,7 @@ The goal is to show how to build a **configurator** where the form adapts to use
 
 ---
 
-## 🗂 Project Structure
+## Project Structure
 
 ```
 react-configurator-sample/
@@ -40,7 +40,7 @@ react-configurator-sample/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone and Install
 ```bash
@@ -72,7 +72,7 @@ Frontend will run at [http://localhost:5173](http://localhost:5173) (default Vit
 
 ---
 
-## 🛠 How It Works
+## How It Works
 
 1. **Dynamic Form Generation**  
    The form is defined in `schema.json` using JSON Schema. For example:
@@ -127,7 +127,7 @@ Frontend will run at [http://localhost:5173](http://localhost:5173) (default Vit
 
 ---
 
-## 📚 Resources to Learn More
+## Resources to Learn More
 
 - JSON Schema: https://json-schema.org/
 - React JSONSchema Form: https://rjsf-team.github.io/react-jsonschema-form/
@@ -137,15 +137,9 @@ Frontend will run at [http://localhost:5173](http://localhost:5173) (default Vit
 
 ---
 
-## 📌 Next Steps / Extensions
+## Next Steps / Extensions
 
 - Add **database integration** for persisting configurations
 - Use **GraphQL** instead of REST for querying PLM data
 - Connect to **3D visualization** tools (Three.js, Babylon.js)
 - Deploy server + frontend with Docker for production
-
----
-
-## 📝 License
-
-MIT
