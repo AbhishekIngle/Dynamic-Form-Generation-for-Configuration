@@ -12,7 +12,7 @@ function clientSideCheck(formData) {
   if (formData.model === 'C' && formData.color === 'red') {
     violations.push({ field: 'color', message: 'Red is not allowed for model C (client check)' })
   }
-  if ((formData.model === 'A' || formData.model === 'B') && !formData.size) {
+  if ((formData.model === 'A' || formData.model === 'B') && (!formData.size|| formData.size.trim() === '')) {
     violations.push({ field: 'size', message: 'Size is required for models A and B (client check)' })
   }
   return violations

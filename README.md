@@ -61,14 +61,14 @@ npm install
 cd server
 node index.js
 ```
-Server will run at [http://localhost:4000](http://localhost:4000).
+Server will run at (http://localhost:4000).
 
 ### 3. Run the Frontend
 ```bash
 cd frontend
 npm run dev
 ```
-Frontend will run at [http://localhost:5173](http://localhost:5173) (default Vite port).
+Frontend will run at (http://localhost:5173) (default Vite port).
 
 ---
 
@@ -89,7 +89,7 @@ Frontend will run at [http://localhost:5173](http://localhost:5173) (default Vit
          "oneOf": [
            {
              "properties": {
-               "model": { "const": "A" },
+               "model": { "const":  },
                "size": { "type": "string", "enum": ["small", "medium"] }
              }
            },
@@ -124,22 +124,3 @@ Frontend will run at [http://localhost:5173](http://localhost:5173) (default Vit
    ```
 
    When the form is submitted, frontend sends data to `POST /api/validate`, server applies rules, and returns violations.
-
----
-
-## Resources to Learn More
-
-- JSON Schema: https://json-schema.org/
-- React JSONSchema Form: https://rjsf-team.github.io/react-jsonschema-form/
-- json-logic-js (business rules engine): https://jsonlogic.com/
-- Express.js: https://expressjs.com/
-- Vite (React bundler): https://vitejs.dev/
-
----
-
-## Next Steps / Extensions
-
-- Add **database integration** for persisting configurations
-- Use **GraphQL** instead of REST for querying PLM data
-- Connect to **3D visualization** tools (Three.js, Babylon.js)
-- Deploy server + frontend with Docker for production

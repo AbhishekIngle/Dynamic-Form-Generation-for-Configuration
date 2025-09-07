@@ -2,15 +2,15 @@
   "rules": [
     {
       "id": "invalidColorForC",
-      "message": "Red is not allowed for model C",
+      "message": "Red is not allowed for model Model-C",
       "field": "color",
-      "logic": { "and": [ { "==": [ { "var": "model" }, "C" ] }, { "==": [ { "var": "color" }, "red" ] } ] }
+      "logic": { "and": [ { "==": [ { "var": "model" }, "Model-C" ] }, { "==": [ { "var": "color" }, "red" ] } ] }
     },
     {
       "id": "sizeRequiredForAorB",
       "message": "Size is required for models A and B",
       "field": "size",
-      "logic": { "and": [ { "in": [ { "var": "model" }, ["A", "B"] ] }, { "!": [ { "var": "size" } ] } ] }
+      "logic": { "and": [ { "in": [ { "var": "model" }, ["Model-A", "Model-B"] ] }, { "!": [ { "var": "size" } ] } ] }
     }
   ]
 }
