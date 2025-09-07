@@ -1,0 +1,16 @@
+{
+  "rules": [
+    {
+      "id": "invalidColorForC",
+      "message": "Red is not allowed for model C",
+      "field": "color",
+      "logic": { "and": [ { "==": [ { "var": "model" }, "C" ] }, { "==": [ { "var": "color" }, "red" ] } ] }
+    },
+    {
+      "id": "sizeRequiredForAorB",
+      "message": "Size is required for models A and B",
+      "field": "size",
+      "logic": { "and": [ { "in": [ { "var": "model" }, ["A", "B"] ] }, { "!": [ { "var": "size" } ] } ] }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "title": "",
+  "type": "object",
+  "properties": {
+    "model": {
+      "type": "string",
+      "title": "Model: ",
+      "enum": ["Model-A", "Model-B", "Model-C"]
+    },
+    "color": {
+      "type": "string",
+      "title": "Color: ",
+      "enum": ["red", "green", "blue"]
+    }
+  },
+  "dependencies": {
+    "model": {
+      "oneOf": [
+        {
+          "properties": {
+            "model": { "const": "Model-A" },
+            "size": { "type": "string", "title": "Size: ", "enum": ["small", "medium"] }
+          }
+        },
+        {
+          "properties": {
+            "model": { "const": "Model-B" },
+            "size": { "type": "string", "title": "Size: ", "enum": ["large"] }
+          }
+        },
+        {
+          "properties": {
+            "model": { "const": "Model-C" }
+          }
+        }
+      ]
+    }
+  }
+}
