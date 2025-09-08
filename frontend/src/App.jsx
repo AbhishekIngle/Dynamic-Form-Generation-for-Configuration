@@ -9,10 +9,10 @@ import { OrbitControls } from '@react-three/drei'
 // --- Client-side rules ---
 function clientSideCheck(formData) {
   const violations = []
-  if (formData.model === 'C' && formData.color === 'red') {
+  if (formData.model === 'Model-C' && formData.color === 'red') {
     violations.push({ field: 'color', message: 'Red is not allowed for model C (client check)' })
   }
-  if ((formData.model === 'A' || formData.model === 'B') && (!formData.size|| formData.size.trim() === '')) {
+  if ((formData.model === 'Model-A' || formData.model === 'Model-B') && (!formData.size|| formData.size.trim() === '')) {
     violations.push({ field: 'size', message: 'Size is required for models A and B (client check)' })
   }
   return violations
@@ -36,13 +36,13 @@ function ModelViewer({ model, color }) {
 
   let geometry
   switch (model) {
-    case 'A':
+    case 'Model-A':
       geometry = <boxGeometry args={[1, 1, 1]} />
       break
-    case 'B':
+    case 'Model-B':
       geometry = <sphereGeometry args={[0.8, 32, 32]} />
       break
-    case 'C':
+    case 'Model-C':
       geometry = <cylinderGeometry args={[0.6, 0.6, 1, 32]} />
       break
     default:
@@ -95,12 +95,12 @@ export default function App() {
   const [formData, setFormData] = React.useState({})
 
   const onSubmit = async ({ formData }) => {
-    const clientViolations = clientSideCheck(formData)
-    if (clientViolations.length) {
-      setServerViolations(clientViolations)
-      setStatus('client-error')
-      return
-    }
+    // const clientViolations = clientSideCheck(formData)
+    // if (clientViolations.length) {
+    //   setServerViolations(clientViolations)
+    //   setStatus('client-error')
+    //   return
+    // }
 
     setStatus('validating')
     try {

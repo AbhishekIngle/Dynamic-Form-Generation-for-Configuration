@@ -8,15 +8,22 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.json({ok: true}));
+app.get('/', (req, res) => res.json({ ok: true }));
 
 app.post('/api/validate', (req, res) => {
-  const data = req.body || {};
+  const raw = req.body || {};
+  const data = {
+    model: raw.model ? raw.model.trim() : undefined,
+    color: raw.color ? raw.color.trim().toLowerCase() : undefined,
+    size: raw.size ? raw.size.trim() : undefined
+  };
+  console.log("Received data:", data);
   const violations = [];
 
   for (const rule of rules.rules) {
     try {
       const result = jsonLogic.apply(rule.logic, data);
+      console.log(`Rule: ${rule.id}, Data:`, data, "=> Result:", result)
       if (result) {
         violations.push({ id: rule.id, field: rule.field, message: rule.message });
       }
@@ -25,7 +32,6 @@ app.post('/api/validate', (req, res) => {
       violations.push({ id: rule.id, field: rule.field, message: `Rule evaluation error: ${err.message}` });
     }
   }
-
   res.json({ valid: violations.length === 0, violations });
 });
 
